@@ -8,8 +8,31 @@
   * 분산 버전 관리 시스템
   * 저장소를 전부 복제. 이 복제물로 서버를 복원할 수 있다.
   * 모든 Checkout는 백업 데이터라 생각할 수 있다.
+ 
+ 
+ # 기본 명령어
+ 
+ * git init : 기존 프로젝트를 git으로 관리
+ 
+ * git add : 파일 추가
+ 
+ * git clone [url] : 기존 fit 저장소 복사
+ 
+ * git status : 파일 상태 확인
+ 
+ * 커밋할 파일 무시
+  * .gitignore 파일 생성하여 무시할 파일 패턴 설정
   
-  
+* gif diff : 변경 내용 확인
+
+* git commit : 변경 사항 커밋
+  * --amend : 기존의 커밋을 덮어씀 
+  * ex) $ git commit -m 'initial commit' $ git add forgotten_file $ git commit --amend 
+   ==> 두 번째 커밋이 세 번째 커밋을 덮어씀 
+
+* git log : 커밋 히스토리 조회
+
+
 
 # 리모트 저장소
 
