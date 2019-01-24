@@ -81,3 +81,21 @@
   
 * git merge [브랜치 이름]
 
+
+# 프로젝트 환경 설정
+
+* postgresSQL
+  * docker run --name postgreSQL -e POSTGRES_USER=user -e POSTGRES_PASSWORD=1234 -d -p 5432:5432 postgres
+
+* 테이블 생성
+  ```postgresql
+  CREATE TABLE VEHICLE (
+      VEHICLE_NO    VARCHAR(10)    NOT NULL,
+      COLOR         VARCHAR(10),
+      WHEEL         INT,
+      SEAT          INT,
+      PRIMARY KEY (VEHICLE_NO)
+  );
+  ```
+
+

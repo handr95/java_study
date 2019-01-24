@@ -1,12 +1,11 @@
 package study.comtroller;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
 
-@RestController
+@Controller
 public class HomeController {
 
-    @RequestMapping("/")
+    /*@RequestMapping("/")
     public String home() {
         return "index";
     }
@@ -14,5 +13,5 @@ public class HomeController {
     @RequestMapping("/test")
     public String test() {
         return "test";
-    }
+    }*/
 }
