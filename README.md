@@ -85,7 +85,11 @@
 # 프로젝트 환경 설정
 
 * postgresSQL
-  * docker run --name postgreSQL -e POSTGRES_USER=user -e POSTGRES_PASSWORD=1234 -d -p 5432:5432 postgres
+  * docker run --name postgreSQL -e POSTGRES_PASSWORD=1234 -d -p 5432:5432 postgres
+  * docker exec -it postgreSQL bash
+  * psql -U postgres
+  * create user test with password 1234
+  * \c test
 
 * 테이블 생성
   ```postgresql
