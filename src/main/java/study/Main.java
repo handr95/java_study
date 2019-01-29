@@ -1,15 +1,8 @@
 package study;
 
-    import org.springframework.context.ApplicationContext;
-    import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+    public class Main {
 
-    import study.config.DatabasesConfiguration;
-    import study.dao.VehicleDao;
-    import study.model.Vehicle;
-
-public class Main {
-
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         ApplicationContext context = new AnnotationConfigApplicationContext(DatabasesConfiguration.class);
 
         VehicleDao vehicleDao = context.getBean(VehicleDao.class);
@@ -18,5 +11,5 @@ public class Main {
 
         vehicle = vehicleDao.findByVehicleNo("TEMP001");
         System.out.println(vehicle);
-    }
+    }*/
 }
