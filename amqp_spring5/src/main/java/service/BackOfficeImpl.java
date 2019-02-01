@@ -1,4 +1,4 @@
-package study.service;
+package service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.rabbitmq.client.AMQP;
@@ -16,8 +16,8 @@ import org.springframework.stereotype.Service;
 import java.io.IOException;
 import java.util.concurrent.TimeoutException;
 
-import study.config.RabbitmqConfiguration;
-import study.model.Mail;
+import config.RabbitmqConfiguration;
+import model.Mail;
 
 @Service
 public class BackOfficeImpl implements BackOffice {

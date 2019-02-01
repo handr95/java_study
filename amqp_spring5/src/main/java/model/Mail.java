@@ -1,4 +1,4 @@
-package study.model;
+package model;
 
 public class Mail {
     private String mailId;

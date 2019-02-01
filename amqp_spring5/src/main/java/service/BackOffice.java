@@ -1,6 +1,6 @@
-package study.service;
+package service;
 
-import study.model.Mail;
+import model.Mail;
 
 public interface BackOffice {
     public Mail receiveMail();

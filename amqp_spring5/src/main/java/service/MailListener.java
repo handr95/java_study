@@ -1,11 +1,11 @@
-package study.service;
+package service;
 
 import javax.jms.JMSException;
 import javax.jms.MapMessage;
 import javax.jms.Message;
 import javax.jms.MessageListener;
 
-import study.model.Mail;
+import model.Mail;
 
 public class MailListener implements MessageListener {
 

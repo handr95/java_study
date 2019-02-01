@@ -1,4 +1,4 @@
-package study.config;
+package config;
 
 import com.rabbitmq.client.ConnectionFactory;
 
@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
-import study.service.FrontDeskImpl;
+import service.FrontDeskImpl;
 
 @PropertySource("classpath:database.properties")
 @Configuration

@@ -1,8 +1,8 @@
-package study.mapper;
+package mapper;
 
 import java.util.List;
 
-import study.model.Vehicle;
+import model.Vehicle;
 
 public interface VehicleMapper {
     void insert(Vehicle vehicle);

@@ -1,4 +1,4 @@
-package study.dao;
+package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,8 +9,8 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
-import study.mapper.VehicleMapper;
-import study.model.Vehicle;
+import mapper.VehicleMapper;
+import model.Vehicle;
 
 public class VehicleDao implements VehicleMapper {
     private static final String INSERT_SQL = "INSERT INTO VEHICLE (COLOR, WHEEL, SEAT, VEHICLE_NO) VALUES (?, ?, ?, ?)";

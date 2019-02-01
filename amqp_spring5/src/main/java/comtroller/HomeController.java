@@ -1,4 +1,4 @@
-package study.comtroller;
+package comtroller;
 
 import org.springframework.stereotype.Controller;
 

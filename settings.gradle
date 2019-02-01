@@ -1,2 +1,4 @@
 rootProject.name = 'java_practices'
+include 'jms_spring5'
+include 'amqp_spring5'
 

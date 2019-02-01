@@ -1,4 +1,4 @@
-package study.model;
+package model;
 
 public class Vehicle {
     private String vehicleNo;

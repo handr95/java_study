@@ -1,4 +1,4 @@
-package study.service;
+package service;
 
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -16,8 +16,8 @@ import java.util.Locale;
 import java.util.Random;
 import java.util.concurrent.TimeoutException;
 
-import study.config.RabbitmqConfiguration;
-import study.model.Mail;
+import config.RabbitmqConfiguration;
+import model.Mail;
 
 @Service
 public class FrontDeskImpl implements FrontDesk {

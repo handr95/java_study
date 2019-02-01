@@ -1,4 +1,4 @@
-package study.config;
+package config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -8,7 +8,7 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 import javax.sql.DataSource;
 
-import study.dao.VehicleDao;
+import dao.VehicleDao;
 
 @PropertySource("classpath:database.properties")
 @Configuration

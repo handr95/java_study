@@ -1,13 +1,11 @@
-package study;
-
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.io.IOException;
 
-import study.config.RabbitmqConfiguration;
-import study.model.Mail;
-import study.service.FrontDesk;
+import config.RabbitmqConfiguration;
+import model.Mail;
+import service.FrontDesk;
 
 public class FrontDeskMain {
 
