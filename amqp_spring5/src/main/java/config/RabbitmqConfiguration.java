@@ -7,6 +7,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
+import service.BackOffice;
+import service.BackOfficeImpl;
+import service.FrontDesk;
 import service.FrontDeskImpl;
 
 @PropertySource("classpath:database.properties")
@@ -46,9 +49,16 @@ public class RabbitmqConfiguration {
     }*/
 
     @Bean
-    public FrontDeskImpl frontDesk() {
+    public FrontDesk frontOffice() {
         FrontDeskImpl frontDesk = new FrontDeskImpl();
         //frontDesk.setRabbitOperations(rabbitTemplate());
         return frontDesk;
+    }
+
+    @Bean
+    public BackOffice backOffice() {
+        BackOfficeImpl backOffice = new BackOfficeImpl();
+        //frontDesk.setRabbitOperations(rabbitTemplate());
+        return backOffice;
     }
 }

@@ -15,6 +15,6 @@ public class Main {
         vehicleDao.insert(vehicle);
 
         vehicle = vehicleDao.findByVehicleNo("TEMP001");
-        System.out.println(vehicle);
+        System.out.println(vehicle.toString());
     }
 }

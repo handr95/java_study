@@ -44,4 +44,14 @@ public class Vehicle {
     public void setSeat(int seat) {
         this.seat = seat;
     }
+
+    @Override
+    public String toString() {
+        return "Vehicle{" +
+               "vehicleNo='" + vehicleNo + '\'' +
+               ", color='" + color + '\'' +
+               ", wheel=" + wheel +
+               ", seat=" + seat +
+               '}';
+    }
 }

@@ -16,6 +16,8 @@ import org.springframework.stereotype.Service;
 import java.io.IOException;
 import java.util.concurrent.TimeoutException;
 
+import javax.annotation.PreDestroy;
+
 import config.RabbitmqConfiguration;
 import model.Mail;
 
@@ -26,15 +28,16 @@ public class BackOfficeImpl implements BackOffice {
 
     private MailListener mailListener = new MailListener();
 
+    private Connection connection = null;
+    private Channel channel = null;
 
     @Override
     public Mail receiveMail() {
         ApplicationContext context = new AnnotationConfigApplicationContext(RabbitmqConfiguration.class);
         ConnectionFactory connectionFactory = context.getBean(ConnectionFactory.class);
 
-        Channel channel = null;
-
-        try (Connection connection = connectionFactory.newConnection()) {
+        try {
+            connection = connectionFactory.newConnection();
             channel = connection.createChannel();
             channel.queueDeclare(QUEUE_NAME, true, false, false, null);
             Consumer consumer = new DefaultConsumer(channel) {
@@ -45,22 +48,20 @@ public class BackOfficeImpl implements BackOffice {
                 }
             };
             channel.basicConsume(QUEUE_NAME, true, consumer);
-
-        } catch (TimeoutException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            if (channel != null) {
-                try {
-                    channel.close();
-                } catch (TimeoutException e) {
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
+        } catch (IOException | TimeoutException e) {
+            throw new RuntimeException(e);
         }
         return null;
+    }
+
+    @PreDestroy
+    public void destory() {
+        if (this.connection != null) {
+            try {
+                this.connection.close();
+            } catch (IOException e) {
+
+            }
+        }
     }
 }
