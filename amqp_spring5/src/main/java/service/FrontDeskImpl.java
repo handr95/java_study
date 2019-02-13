@@ -1,33 +1,24 @@
 package service;
 
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.rabbitmq.client.Channel;
-import com.rabbitmq.client.Connection;
-import com.rabbitmq.client.ConnectionFactory;
-
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.amqp.rabbit.core.RabbitGatewaySupport;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
-import java.io.IOException;
 import java.util.Locale;
 import java.util.Random;
-import java.util.concurrent.TimeoutException;
 
-import config.RabbitmqConfiguration;
 import model.Mail;
 
 @Service
-public class FrontDeskImpl implements FrontDesk {
+public class FrontDeskImpl extends RabbitGatewaySupport implements FrontDesk {
 
     private static final String QUEUE_NAME = "mail.queue";
 
-    @Override
+    /*@Override
     public void sendMail(Mail mail) {
         ApplicationContext context = new AnnotationConfigApplicationContext(RabbitmqConfiguration.class);
-        ConnectionFactory connectionFactory = context.getBean(ConnectionFactory.class);
+        connectionFactory connectionFactory = context.getBean(connectionFactory.class);
 
         Channel channel = null;
         Connection connection = null;
@@ -57,6 +48,11 @@ public class FrontDeskImpl implements FrontDesk {
                 }
             }
         }
+    }*/
+
+    @Override
+    public void sendMail(final Mail mail) {
+        getRabbitOperations().convertAndSend(mail);
     }
 
     @Scheduled(initialDelay = 175, fixedDelay = 225)

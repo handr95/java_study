@@ -1,5 +1,7 @@
 package service;
 
+import org.springframework.amqp.rabbit.annotation.RabbitListener;
+
 import javax.jms.JMSException;
 import javax.jms.MapMessage;
 import javax.jms.Message;
@@ -23,7 +25,12 @@ public class MailListener implements MessageListener {
         }
     }
 
-    public void displayMail(Mail mail) {
+    /*public void displayMail(Mail mail) {
         System.out.println("Mail #"+mail.getMailId() + "received");
+    }*/
+
+    @RabbitListener(queues = "mail.queue")
+    public void displayMail(Mail mail) {
+        System.out.println("Received : " + mail.toString());
     }
 }
