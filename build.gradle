@@ -23,10 +23,6 @@ repositories {
     mavenCentral()
 }
 
-ext {
-    springVersion = '5.0.5.RELEASE'
-}
-
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 
 dependencies {
